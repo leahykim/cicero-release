@@ -583,7 +583,7 @@ generate_cicero_models <- function(cds,
   fData(cds)$bp1 <- as.numeric(as.character(fData(cds)$bp1))
   fData(cds)$bp2 <- as.numeric(as.character(fData(cds)$bp2))
 
-  outlist <- parallel::mclapply(seq_len(length(grs)), mc.cores = 1, function(win) {
+  outlist <- parallel::mclapply(seq_len(length(grs)), mc.cores = 4, function(win) {
     GL <- "Error"
 
     win_range <- get_genomic_range(grs, cds, win)
